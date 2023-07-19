@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		773A2D7A2A64B42C0041E61A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D792A64B42C0041E61A /* main.cpp */; };
+		773A2D832A64B7C00041E61A /* fhn_rk4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D812A64B7C00041E61A /* fhn_rk4.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,8 @@
 
 /* Begin PBXFileReference section */
 		773A2D762A64B42C0041E61A /* rk4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rk4; sourceTree = BUILT_PRODUCTS_DIR; };
-		773A2D792A64B42C0041E61A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		773A2D812A64B7C00041E61A /* fhn_rk4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fhn_rk4.cpp; sourceTree = "<group>"; usesTabs = 0; };
+		773A2D822A64B7C00041E61A /* fhn_rk4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fhn_rk4.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +42,8 @@
 		773A2D6D2A64B42C0041E61A = {
 			isa = PBXGroup;
 			children = (
-				773A2D782A64B42C0041E61A /* rk4 */,
+				773A2D812A64B7C00041E61A /* fhn_rk4.cpp */,
+				773A2D822A64B7C00041E61A /* fhn_rk4.hpp */,
 				773A2D772A64B42C0041E61A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,14 +54,6 @@
 				773A2D762A64B42C0041E61A /* rk4 */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		773A2D782A64B42C0041E61A /* rk4 */ = {
-			isa = PBXGroup;
-			children = (
-				773A2D792A64B42C0041E61A /* main.cpp */,
-			);
-			path = rk4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +113,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				773A2D7A2A64B42C0041E61A /* main.cpp in Sources */,
+				773A2D832A64B7C00041E61A /* fhn_rk4.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +239,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/sfml/2.6.0/include;
+				OTHER_LDFLAGS = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +249,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/sfml/2.6.0/include;
+				OTHER_LDFLAGS = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
