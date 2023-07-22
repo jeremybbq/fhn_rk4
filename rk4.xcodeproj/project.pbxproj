@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		773A2D832A64B7C00041E61A /* fhn_rk4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D812A64B7C00041E61A /* fhn_rk4.cpp */; };
+		773A2D832A64B7C00041E61A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D812A64B7C00041E61A /* main.cpp */; };
+		773A2D842A68A5710041E61A /* fhn_rk4.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D822A64B7C00041E61A /* fhn_rk4.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		773A2D762A64B42C0041E61A /* rk4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rk4; sourceTree = BUILT_PRODUCTS_DIR; };
-		773A2D812A64B7C00041E61A /* fhn_rk4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fhn_rk4.cpp; sourceTree = "<group>"; usesTabs = 0; };
+		773A2D812A64B7C00041E61A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; usesTabs = 0; };
 		773A2D822A64B7C00041E61A /* fhn_rk4.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fhn_rk4.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,7 +43,7 @@
 		773A2D6D2A64B42C0041E61A = {
 			isa = PBXGroup;
 			children = (
-				773A2D812A64B7C00041E61A /* fhn_rk4.cpp */,
+				773A2D812A64B7C00041E61A /* main.cpp */,
 				773A2D822A64B7C00041E61A /* fhn_rk4.hpp */,
 				773A2D772A64B42C0041E61A /* Products */,
 			);
@@ -113,7 +114,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				773A2D832A64B7C00041E61A /* fhn_rk4.cpp in Sources */,
+				773A2D842A68A5710041E61A /* fhn_rk4.hpp in Sources */,
+				773A2D832A64B7C00041E61A /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +242,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/sfml/2.6.0/include;
-				OTHER_LDFLAGS = "-v";
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/sfml/2.6.0/lib;
+				OTHER_LDFLAGS = (
+					"-v",
+					"-lsfml-window",
+					"-lsfml-audio",
+					"-lsfml-system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -250,7 +258,13 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /opt/homebrew/Cellar/sfml/2.6.0/include;
-				OTHER_LDFLAGS = "-v";
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/Cellar/sfml/2.6.0/lib;
+				OTHER_LDFLAGS = (
+					"-v",
+					"-lsfml-window",
+					"-lsfml-audio",
+					"-lsfml-system",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

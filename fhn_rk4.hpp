@@ -32,8 +32,8 @@ public:
         double dv;
         double dw;
         
-        Delta() : dv(0.0), dw(0.0) {}
-        Delta(double p, double q) : dv(p), dw(q) {}
+        explicit Delta() : dv(0.0), dw(0.0) {}
+        explicit Delta(double p, double q) : dv(p), dw(q) {}
         
         Delta operator/(const double x) const
         {

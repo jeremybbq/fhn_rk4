@@ -5,12 +5,27 @@
 //  Created by Jeremy Bai on 17/07/2023.
 //
 
+#include <iostream>
 #include "SFML/Audio.hpp"
 #include "fhn_rk4.hpp"
+#include <cmath>
+
+double square(double t, double frequency, double duty_cycle) {
+    double period = 1.0 / frequency;
+    double t_mod = fmod(t, period);
+    return (t_mod < duty_cycle * period) ? 1.0 : -1.0;
+}
+
+double sawtooth(double t, double frequency) {
+    double period = 1.0 / frequency;
+    double t_mod = fmod(t, period);
+    return (2.0 * t_mod / period) - 1.0;
+}
 
 int main() {
     double samplerate = 44100.0;
-    double t_end = 5.0;
+    double input_frequency = 220;
+    double t_end = 10.0;
     double k = 20000.0;
     int total_samples = static_cast<int>(t_end * samplerate);
 
@@ -22,7 +37,9 @@ int main() {
     
     // Solve the model for each sample
     for (int i = 0; i < total_samples; ++i) {
-        solver.processSystem(1);  // Assuming an input of 1
+        const double t_input = i / samplerate;
+        const double input = square(t_input, input_frequency, 0.01);
+        solver.processSystem(input);  // Assuming an input of 1
         output[i] = static_cast<sf::Int16>(solver.getCurrentState() * 32767.5 - 0.5);  // Scale to the range of sf::Int16
     }
 
