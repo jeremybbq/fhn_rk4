@@ -1,5 +1,5 @@
 //
-//  fhn_rk4.hpp
+//  FHNSolver.hpp
 //  rk4
 //
 //  Created by Jeremy Bai on 17/07/2023.

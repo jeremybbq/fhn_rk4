@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		773A2D832A64B7C00041E61A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D812A64B7C00041E61A /* main.cpp */; };
-		773A2D842A68A5710041E61A /* fhn_rk4.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D822A64B7C00041E61A /* fhn_rk4.hpp */; };
+		77F968222A6F3CB3008AF167 /* fhn_rk4.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 773A2D822A64B7C00041E61A /* fhn_rk4.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -114,7 +114,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				773A2D842A68A5710041E61A /* fhn_rk4.hpp in Sources */,
+				77F968222A6F3CB3008AF167 /* fhn_rk4.hpp in Sources */,
 				773A2D832A64B7C00041E61A /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
